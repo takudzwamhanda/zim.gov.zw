@@ -1,0 +1,389 @@
+/* Custom CSS for Zimbabwe Government Portal */
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #006400;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #004d00;
+}
+
+/* Custom selection color */
+::selection {
+    background: #006400;
+    color: #006400;
+}
+
+/* Custom focus ring for better accessibility */
+*:focus {
+    outline: 2px solid #ffd700;
+    outline-offset: 2px;
+}
+
+/* Custom loading spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Custom tooltip styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Custom notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.success {
+    background-color: #00aa00;
+}
+
+.notification.error {
+    background-color: #ff4444;
+}
+
+.notification.warning {
+    background-color: #ffaa00;
+}
+
+.notification.info {
+    background-color: #006400;
+}
+
+/* Custom modal styles */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.custom-modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.custom-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.custom-modal-close:hover {
+    color: #000;
+}
+
+/* Custom progress bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #006400, #00aa00);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Custom badge styles */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.primary {
+    background-color: #006400;
+    color: white;
+}
+
+.badge.secondary {
+    background-color: #ffd700;
+    color: #006400;
+}
+
+.badge.success {
+    background-color: #00aa00;
+    color: white;
+}
+
+.badge.warning {
+    background-color: #ffaa00;
+    color: white;
+}
+
+.badge.error {
+    background-color: #ff4444;
+    color: white;
+}
+
+/* Custom card hover effects */
+.hover-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom button variations */
+.btn-outline {
+    background: transparent;
+    border: 2px solid #006400;
+    color: #006400;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #006400;
+    color: white;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #006400;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+    background: rgba(0, 100, 0, 0.1);
+}
+
+/* Custom form enhancements */
+.form-floating {
+    position: relative;
+}
+
+.form-floating input,
+.form-floating textarea {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.form-floating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.form-floating input:focus ~ label,
+.form-floating input:not(:placeholder-shown) ~ label,
+.form-floating textarea:focus ~ label,
+.form-floating textarea:not(:placeholder-shown) ~ label {
+    opacity: 0.65;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+/* Custom table styles */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-table th {
+    background-color: #006400;
+    color: white;
+    font-weight: 600;
+}
+
+.custom-table tr:hover {
+    background-color: rgba(0, 100, 0, 0.05);
+}
+
+/* Custom list styles */
+.custom-list {
+    list-style: none;
+    padding: 0;
+}
+
+.custom-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.custom-list li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #006400;
+    font-size: 0.8em;
+}
+
+/* Custom grid system */
+.custom-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.custom-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.custom-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.custom-grid.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+    .custom-grid.cols-2,
+    .custom-grid.cols-3,
+    .custom-grid.cols-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Custom utility classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+.p-4 { padding: 1.5rem; }
+.p-5 { padding: 3rem; }
+
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+.rounded { border-radius: 0.25rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-xl { border-radius: 1rem; }
+
+.shadow { box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); }
+.shadow-lg { box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
+.shadow-xl { box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); } 

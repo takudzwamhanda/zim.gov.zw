@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Registration - Zimbabwe Government Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Zimbabwe Government Logo">
+            <h1>Zimbabwe Government Portal</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="application-page">
+        <div class="application-hero">
+            <h1>Business Registration</h1>
+            <p>Register your business online</p>
+        </div>
+
+        <div class="application-content">
+            <form id="businessForm" onsubmit="return handleBusinessRegistration(event)">
+                <div class="form-section">
+                    <h2>Business Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="businessName">Business Name*</label>
+                            <input type="text" id="businessName" name="businessName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessType">Business Type*</label>
+                            <select id="businessType" name="businessType" required>
+                                <option value="">Select Business Type</option>
+                                <option value="sole">Sole Proprietorship</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="private">Private Limited Company</option>
+                                <option value="public">Public Limited Company</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="registrationNumber">Proposed Registration Number</label>
+                            <input type="text" id="registrationNumber" name="registrationNumber" readonly>
+                            <small>Will be assigned upon approval</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessAddress">Business Address*</label>
+                            <textarea id="businessAddress" name="businessAddress" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessPhone">Business Phone*</label>
+                            <input type="tel" id="businessPhone" name="businessPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessEmail">Business Email*</label>
+                            <input type="email" id="businessEmail" name="businessEmail" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Owner/Partner Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="ownerName">Full Name*</label>
+                            <input type="text" id="ownerName" name="ownerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerId">National ID Number*</label>
+                            <input type="text" id="ownerId" name="ownerId" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerPhone">Phone Number*</label>
+                            <input type="tel" id="ownerPhone" name="ownerPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerEmail">Email Address*</label>
+                            <input type="email" id="ownerEmail" name="ownerEmail" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Business Details</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="businessCategory">Business Category*</label>
+                            <select id="businessCategory" name="businessCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="retail">Retail</option>
+                                <option value="wholesale">Wholesale</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="services">Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessDescription">Business Description*</label>
+                            <textarea id="businessDescription" name="businessDescription" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Intended Start Date*</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Document Upload</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="businessPlan">Business Plan*</label>
+                            <input type="file" id="businessPlan" name="businessPlan" accept=".pdf" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerIdDocument">Owner's ID Document*</label>
+                            <input type="file" id="ownerIdDocument" name="ownerIdDocument" accept=".pdf,.jpg,.jpeg,.png" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="proofOfAddress">Proof of Business Address*</label>
+                            <input type="file" id="proofOfAddress" name="proofOfAddress" accept=".pdf,.jpg,.jpeg,.png" required>
+                            <small>Utility bill or lease agreement not older than 3 months</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Declaration</h2>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            I declare that all the information provided is true and correct to the best of my knowledge.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="gov-button">Submit Registration</button>
+                    <button type="button" class="gov-button secondary" onclick="window.location.href='services.html'">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <script src="script.js" defer></script>
+</body>
+</html> 

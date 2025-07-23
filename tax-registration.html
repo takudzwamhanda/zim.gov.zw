@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Registration - Zimbabwe Government Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Zimbabwe Government Logo">
+            <h1>Zimbabwe Government Portal</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="application-page">
+        <div class="application-hero">
+            <h1>Tax Registration</h1>
+            <p>Register for tax services online</p>
+        </div>
+
+        <div class="application-content">
+            <form id="taxForm" onsubmit="return handleTaxRegistration(event)">
+                <div class="form-section">
+                    <h2>Personal Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName">First Name*</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name*</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationalId">National ID Number*</label>
+                            <input type="text" id="nationalId" name="nationalId" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth*</label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number*</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Address Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="physicalAddress">Physical Address*</label>
+                            <textarea id="physicalAddress" name="physicalAddress" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="postalAddress">Postal Address</label>
+                            <textarea id="postalAddress" name="postalAddress"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City/Town*</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="province">Province*</label>
+                            <select id="province" name="province" required>
+                                <option value="">Select Province</option>
+                                <option value="bulawayo">Bulawayo</option>
+                                <option value="harare">Harare</option>
+                                <option value="manicaland">Manicaland</option>
+                                <option value="mashonaland-central">Mashonaland Central</option>
+                                <option value="mashonaland-east">Mashonaland East</option>
+                                <option value="mashonaland-west">Mashonaland West</option>
+                                <option value="masvingo">Masvingo</option>
+                                <option value="matabeleland-north">Matabeleland North</option>
+                                <option value="matabeleland-south">Matabeleland South</option>
+                                <option value="midlands">Midlands</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Tax Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="taxType">Type of Tax Registration*</label>
+                            <select id="taxType" name="taxType" required>
+                                <option value="">Select Tax Type</option>
+                                <option value="individual">Individual Income Tax</option>
+                                <option value="business">Business Tax</option>
+                                <option value="vat">Value Added Tax (VAT)</option>
+                                <option value="paye">Pay As You Earn (PAYE)</option>
+                                <option value="multiple">Multiple Tax Types</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessName">Business Name (if applicable)</label>
+                            <input type="text" id="businessName" name="businessName">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessRegistration">Business Registration Number (if applicable)</label>
+                            <input type="text" id="businessRegistration" name="businessRegistration">
+                        </div>
+                        <div class="form-group">
+                            <label for="taxNumber">Existing Tax Number (if any)</label>
+                            <input type="text" id="taxNumber" name="taxNumber">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Document Upload</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="idDocument">National ID Document*</label>
+                            <input type="file" id="idDocument" name="idDocument" accept=".pdf,.jpg,.jpeg,.png" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="proofOfAddress">Proof of Address*</label>
+                            <input type="file" id="proofOfAddress" name="proofOfAddress" accept=".pdf,.jpg,.jpeg,.png" required>
+                            <small>Utility bill or bank statement not older than 3 months</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessRegistrationDoc">Business Registration Document (if applicable)</label>
+                            <input type="file" id="businessRegistrationDoc" name="businessRegistrationDoc" accept=".pdf,.jpg,.jpeg,.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Declaration</h2>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            I declare that all the information provided is true and correct to the best of my knowledge.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="gov-button">Submit Registration</button>
+                    <button type="button" class="gov-button secondary" onclick="window.location.href='services.html'">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <script src="script.js" defer></script>
+</body>
+</html> 

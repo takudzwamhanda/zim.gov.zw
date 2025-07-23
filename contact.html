@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - zim.gov.zw</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        
+        <div class="logo">
+            <a href="./index.html">
+                <img src="images/logo.png" alt="Government of Zimbabwe Logo">
+            </a>
+            <span></span>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list" id="navList">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./ministries.html">Ministries</a></li>
+                <li><a href="./news.html">News</a></li>
+                <li><a href="./calendar.html">Calendar</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+ 
+
+    </header>
+
+    <main class="contact-page">
+        <section class="contact-hero">
+            <h1>Contact Us</h1>
+            <p>Get in touch with government representatives</p>
+        </section>
+
+        <section class="contact-content">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Main Office</h3>
+                        <p>New Government Complex</p>
+                        <p>Samora Machel Avenue</p>
+                        <p>Harare, Zimbabwe</p>
+                        <p>Phone: +263 242 700 000</p>
+                        <p>Email: info@gov.zw</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Working Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 4:30 PM</p>
+                        <p>Saturday: 8:00 AM - 1:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Emergency Contacts</h3>
+                        <p>Police: 999</p>
+                        <p>Ambulance: 994</p>
+                        <p>Fire: 993</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h2>Send us a Message</h2>
+                <form id="contactForm" class="contact-form" onsubmit="return handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="service">Service Related</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="suggestion">Suggestion</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="gov-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <!-- Replace with actual Google Maps embed code -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.1234567890123!2d31.0333!3d-17.8252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ5JzMwLjciUyAzMcKwMDInMDAuMCJF!5e0!3m2!1sen!2szw!4v1234567890"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+
+<footer class="footer-compact">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="logo.png" alt="Government of Zimbabwe Logo">
+            <span class="site-name">zim.gov.zw</span>
+            
+        </div>
+        <div class="footer-links">
+            <strong>Quick Links</strong>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="ministries.html">Ministries</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-contact">
+            <strong>Contact</strong>
+            <span>Email: info@zim.gov.zw</span>
+            <span>Phone: +263 4 123456</span>
+            <span>Harare, Zimbabwe</span>
+        </div>
+        <div class="footer-social">
+            <a href="#" aria-label="Facebook" title="Facebook"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+            <a href="#" aria-label="Twitter" title="Twitter"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.38 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.117 2.823 5.254a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.058 0 14.009-7.496 14.009-13.986 0-.21 0-.423-.016-.634A9.936 9.936 0 0 0 24 4.557z"/></svg></a>
+            <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.37-1.849 3.602 0 4.267 2.369 4.267 5.455v6.285zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.271V1.723C24 .771 23.2 0 22.225 0z"/></svg></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Government of Zimbabwe. All rights reserved.
+    </div>
+</footer>
+
+    
+    <script src="script.js" defer></script>
+</body>
+</html> 

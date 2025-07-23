@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Article - zim.gov.zw</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="images/logo.jpg" alt="Government of Zimbabwe Logo">
+            </a>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./ministries.html">Ministries</a></li>
+                <li><a href="./news.html">News</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="news-article-page">
+        <article class="news-article">
+            <div class="article-header">
+                <span class="article-date" id="articleDate"></span>
+                <h1 id="articleTitle"></h1>
+                <div class="article-meta">
+                    <span class="article-category" id="articleCategory"></span>
+                    <span class="article-author" id="articleAuthor"></span>
+                </div>
+            </div>
+            
+            <div class="article-image">
+                <img id="articleImage" src="" alt="">
+            </div>
+            
+            <div class="article-content" id="articleContent">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+            
+            <div class="article-footer">
+                <div class="share-buttons">
+                    <button onclick="shareOnFacebook()" class="share-button facebook">Share on Facebook</button>
+                    <button onclick="shareOnTwitter()" class="share-button twitter">Share on Twitter</button>
+                    <button onclick="shareOnWhatsApp()" class="share-button whatsapp">Share on WhatsApp</button>
+                </div>
+                <a href="news.html" class="back-to-news">← Back to News</a>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        // Get article data from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id');
+
+        // Sample news data (in a real application, this would come from a database)
+        const newsArticles = {
+            'budget-2024': {
+                title: '2024 National Budget Announcement',
+                date: 'March 15, 2024',
+                category: 'Announcements',
+                author: 'Ministry of Finance',
+                image: 'news1.jpg',
+                content: `
+                    <p>The Minister of Finance has announced the 2024 National Budget, focusing on economic growth and social development. The budget outlines significant investments in key sectors including:</p>
+                    
+                    <h2>Key Highlights</h2>
+                    <ul>
+                        <li>Increased allocation for healthcare infrastructure</li>
+                        <li>Enhanced support for agricultural development</li>
+                        <li>Expanded social protection programs</li>
+                        <li>Investment in digital infrastructure</li>
+                    </ul>
+
+                    <h2>Economic Growth Projections</h2>
+                    <p>The budget projects a 5% economic growth rate for 2024, driven by increased agricultural output and mining sector expansion. The government aims to maintain inflation within target ranges while ensuring sustainable development.</p>
+
+                    <h2>Social Development Initiatives</h2>
+                    <p>Significant resources have been allocated to education and healthcare, with particular focus on rural development and infrastructure improvement. The budget includes provisions for:</p>
+                    <ul>
+                        <li>Construction of new schools and hospitals</li>
+                        <li>Expansion of social safety nets</li>
+                        <li>Support for small and medium enterprises</li>
+                    </ul>
+
+                    <h2>Next Steps</h2>
+                    <p>The implementation of the budget will begin in April 2024, with regular progress reports to be published quarterly. Citizens are encouraged to stay informed about developments through official government channels.</p>
+                `
+            },
+            'education-policy': {
+                title: 'New Education Policy Implementation',
+                date: 'March 14, 2024',
+                category: 'Press Releases',
+                author: 'Ministry of Education',
+                image: 'news2.jpg',
+                content: `
+                    <p>The Ministry of Education has launched a new curriculum framework aimed at improving learning outcomes and preparing students for the challenges of the modern world.</p>
+
+                    <h2>Key Changes</h2>
+                    <ul>
+                        <li>Enhanced focus on STEM education</li>
+                        <li>Integration of digital literacy</li>
+                        <li>Expanded vocational training programs</li>
+                        <li>Improved teacher training initiatives</li>
+                    </ul>
+
+                    <h2>Implementation Timeline</h2>
+                    <p>The new curriculum will be phased in over the next three years, with pilot programs beginning in selected schools this academic year. The ministry has allocated resources for teacher training and necessary infrastructure upgrades.</p>
+
+                    <h2>Expected Outcomes</h2>
+                    <p>The policy aims to:</p>
+                    <ul>
+                        <li>Improve student performance in core subjects</li>
+                        <li>Increase graduation rates</li>
+                        <li>Better prepare students for employment</li>
+                        <li>Enhance digital skills across all levels</li>
+                    </ul>
+                `
+            },
+            'healthcare-initiative': {
+                title: 'Healthcare Infrastructure Development',
+                date: 'March 13, 2024',
+                category: 'Announcements',
+                author: 'Ministry of Health',
+                image: 'news3.jpg',
+                content: `
+                    <p>The government has announced a comprehensive healthcare infrastructure development plan aimed at improving access to quality healthcare services across the country.</p>
+
+                    <h2>Major Projects</h2>
+                    <ul>
+                        <li>Construction of 5 new district hospitals</li>
+                        <li>Renovation of existing healthcare facilities</li>
+                        <li>Installation of modern medical equipment</li>
+                        <li>Expansion of rural health centers</li>
+                    </ul>
+
+                    <h2>Investment Details</h2>
+                    <p>The initiative represents a significant investment in the country's healthcare system, with funding allocated for both infrastructure and equipment. The projects will be implemented in phases over the next two years.</p>
+
+                    <h2>Expected Impact</h2>
+                    <p>These developments are expected to:</p>
+                    <ul>
+                        <li>Reduce patient waiting times</li>
+                        <li>Improve healthcare accessibility in rural areas</li>
+                        <li>Enhance emergency response capabilities</li>
+                        <li>Create employment opportunities in the healthcare sector</li>
+                    </ul>
+                `
+            },
+            'agricultural-program': {
+                title: 'Agricultural Support Program Launch',
+                date: 'March 12, 2024',
+                category: 'Events',
+                author: 'Ministry of Agriculture',
+                image: 'news4.jpg',
+                content: `
+                    <p>A new comprehensive agricultural support program has been launched to boost food security and enhance farmer productivity across the country.</p>
+
+                    <h2>Program Components</h2>
+                    <ul>
+                        <li>Subsidized input distribution</li>
+                        <li>Modern farming equipment access</li>
+                        <li>Technical training and support</li>
+                        <li>Market linkage initiatives</li>
+                    </ul>
+
+                    <h2>Support Services</h2>
+                    <p>The program includes various support services for farmers:</p>
+                    <ul>
+                        <li>Access to quality seeds and fertilizers</li>
+                        <li>Irrigation system development</li>
+                        <li>Climate-smart farming techniques</li>
+                        <li>Post-harvest management training</li>
+                    </ul>
+
+                    <h2>Implementation Strategy</h2>
+                    <p>The program will be rolled out in phases, with priority given to small-scale farmers and vulnerable communities. Regular monitoring and evaluation will ensure effective implementation and desired outcomes.</p>
+                `
+            },
+            'digital-transformation': {
+                title: 'Digital Government Services Expansion',
+                date: 'March 11, 2024',
+                category: 'Press Releases',
+                author: 'Ministry of ICT',
+                image: 'news5.jpg',
+                content: `
+                    <p>The government has launched new digital platforms to improve service delivery and enhance citizen engagement with various government departments.</p>
+
+                    <h2>New Digital Services</h2>
+                    <ul>
+                        <li>Online document processing</li>
+                        <li>Digital payment systems</li>
+                        <li>Citizen feedback platforms</li>
+                        <li>Mobile service applications</li>
+                    </ul>
+
+                    <h2>Key Features</h2>
+                    <p>The new digital platforms offer:</p>
+                    <ul>
+                        <li>24/7 service accessibility</li>
+                        <li>Secure document submission</li>
+                        <li>Real-time application tracking</li>
+                        <li>Automated notifications</li>
+                    </ul>
+
+                    <h2>Benefits</h2>
+                    <p>These digital initiatives aim to:</p>
+                    <ul>
+                        <li>Reduce processing times</li>
+                        <li>Minimize physical visits to offices</li>
+                        <li>Enhance transparency</li>
+                        <li>Improve overall service efficiency</li>
+                    </ul>
+                `
+            },
+            'youth-empowerment': {
+                title: 'Youth Empowerment Initiative',
+                date: 'March 10, 2024',
+                category: 'Events',
+                author: 'Ministry of Youth',
+                image: 'news6.jpg',
+                content: `
+                    <p>A new comprehensive youth empowerment program has been launched to support young entrepreneurs and create sustainable employment opportunities.</p>
+
+                    <h2>Program Components</h2>
+                    <ul>
+                        <li>Business development training</li>
+                        <li>Startup funding opportunities</li>
+                        <li>Mentorship programs</li>
+                        <li>Skills development workshops</li>
+                    </ul>
+
+                    <h2>Support Services</h2>
+                    <p>The initiative provides various support services:</p>
+                    <ul>
+                        <li>Access to business loans</li>
+                        <li>Technical skills training</li>
+                        <li>Market access facilitation</li>
+                        <li>Networking opportunities</li>
+                    </ul>
+
+                    <h2>Expected Impact</h2>
+                    <p>The program aims to:</p>
+                    <ul>
+                        <li>Create sustainable employment</li>
+                        <li>Foster innovation and entrepreneurship</li>
+                        <li>Reduce youth unemployment</li>
+                        <li>Develop future business leaders</li>
+                    </ul>
+                `
+            }
+        };
+
+        // Populate article content
+        function loadArticle() {
+            const article = newsArticles[articleId];
+            if (!article) {
+                window.location.href = 'news.html';
+                return;
+            }
+
+            document.title = `${article.title} - zim.gov.zw`;
+            document.getElementById('articleTitle').textContent = article.title;
+            document.getElementById('articleDate').textContent = article.date;
+            document.getElementById('articleCategory').textContent = article.category;
+            document.getElementById('articleAuthor').textContent = article.author;
+            document.getElementById('articleImage').src = article.image;
+            document.getElementById('articleImage').alt = article.title;
+            document.getElementById('articleContent').innerHTML = article.content;
+        }
+
+        // Share functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const text = encodeURIComponent(document.getElementById('articleTitle').textContent);
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const text = encodeURIComponent(document.getElementById('articleTitle').textContent);
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://wa.me/?text=${text}%20${url}`, '_blank');
+        }
+
+        // Load article when page loads
+        document.addEventListener('DOMContentLoaded', loadArticle);
+    </script>
+</body>
+</html> 

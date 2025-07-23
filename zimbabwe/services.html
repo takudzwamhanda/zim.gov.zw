@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Services - Zimbabwe Government Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="Government of Zimbabwe Logo"></a>
+            <span>Zimbabwe Government Portal</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="main-content-inner">
+            <h1>Government Services</h1>
+            <p>Select a service to start your application:</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/passport.jpg" alt="Passport Application">
+                    <h3>Passport Application</h3>
+                    <p>Apply for or renew your Zimbabwean passport online.</p>
+                    <button class="gov-button" onclick="startService('passport')">Start Application</button>
+                </div>
+                <div class="service-card">
+                    <img src="images/id.jpg" alt="National ID">
+                    <h3>National ID Registration</h3>
+                    <p>Apply for or replace your National ID card.</p>
+                    <button class="gov-button" onclick="startService('national-id')">Start Application</button>
+                </div>
+                <div class="service-card">
+                    <img src="images/reg.webp" alt="Business Registration">
+                    <h3>Business Registration</h3>
+                    <p>Register your business online.</p>
+                    <button class="gov-button" onclick="startService('business')">Start Application</button>
+                </div>
+                <div class="service-card">
+                    <img src="images/tax.jpg" alt="Tax Registration">
+                    <h3>Tax Registration</h3>
+                    <p>Register for tax as an individual or business.</p>
+                    <button class="gov-button" onclick="startService('tax')">Start Application</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 
