@@ -1,3 +1,31 @@
+// Hamburger Menu Functionality (Robust)
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navList = document.getElementById('navList');
+
+    if (!menuToggle) {
+        console.error('Hamburger menu button (menu-toggle) not found!');
+        return;
+    }
+    if (!navList) {
+        console.error('Navigation list (navList) not found!');
+        return;
+    }
+
+    menuToggle.addEventListener('click', function() {
+        navList.classList.toggle('active');
+        console.log('Hamburger clicked! Menu is now', navList.classList.contains('active') ? 'open' : 'closed');
+    });
+
+    // Close menu when a nav link is clicked (mobile/tablet UX)
+    navList.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navList.classList.remove('active');
+            console.log('Menu closed after clicking a link.');
+        });
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Add styles for the desktop hamburger button
     const style = document.createElement('style');
@@ -74,19 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .nav-toggle {
                 display: block;
             }
-            nav ul {
-                display: none;
-            }
-            nav ul.show {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #006400;
-                padding: 20px;
-            }
     `;
     document.head.appendChild(errorStyle);
 
@@ -102,66 +117,101 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             height: 'auto',
             events: [
-                // Public Holidays
+                // Public Holidays 2025
                 {
-                    title: 'New Year\'s Day',
-                    start: '2024-01-01',
+                    title: "New Year's Day",
+                    start: '2025-01-01',
                     category: 'holidays',
                     color: '#ff4444',
                     description: 'National holiday celebrating the start of the new year'
                 },
                 {
-                    title: 'Independence Day',
-                    start: '2024-04-18',
+                    title: 'Robert Gabriel Mugabe National Youth Day',
+                    start: '2025-02-21',
+                    category: 'holidays',
+                    color: '#ff4444',
+                    description: 'Commemorating the legacy of Robert Gabriel Mugabe and youth empowerment'
+                },
+                {
+                    title: 'Good Friday',
+                    start: '2025-04-18',
+                    category: 'holidays',
+                    color: '#ff4444',
+                    description: 'Christian holiday commemorating the crucifixion of Jesus Christ'
+                },
+                {
+                    title: 'Holy Saturday',
+                    start: '2025-04-19',
+                    category: 'holidays',
+                    color: '#ff4444',
+                    description: 'Christian holiday observed the day after Good Friday'
+                },
+                {
+                    title: 'Easter',
+                    start: '2025-04-20',
+                    category: 'holidays',
+                    color: '#ff4444',
+                    description: 'Christian holiday celebrating the resurrection of Jesus Christ'
+                },
+                {
+                    title: 'Easter Monday',
+                    start: '2025-04-21',
+                    category: 'holidays',
+                    color: '#ff4444',
+                    description: 'Christian holiday observed the day after Easter Sunday'
+                },
+                {
+                    title: 'Independence Day of Zimbabwe',
+                    start: '2025-04-18',
                     category: 'holidays',
                     color: '#ff4444',
                     description: 'Celebrating Zimbabwe\'s independence'
                 },
                 {
-                    title: 'Workers\' Day',
-                    start: '2024-05-01',
+                    title: "International Workers' Day",
+                    start: '2025-05-01',
                     category: 'holidays',
                     color: '#ff4444',
                     description: 'International Workers\' Day celebration'
                 },
                 {
                     title: 'Africa Day',
-                    start: '2024-05-25',
+                    start: '2025-05-26',
                     category: 'holidays',
                     color: '#ff4444',
                     description: 'Celebrating African unity and diversity'
                 },
                 {
-                    title: 'Heroes\' Day',
-                    start: '2024-08-12',
+                    title: "Heroes' Day (in Zimbabwe)",
+                    start: '2025-08-11',
                     category: 'holidays',
                     color: '#ff4444',
                     description: 'Honoring national heroes'
                 },
                 {
-                    title: 'Defence Forces Day',
-                    start: '2024-08-13',
+                    title: 'Zimbabwe Defence Forces Day',
+                    start: '2025-08-12',
                     category: 'holidays',
                     color: '#ff4444',
                     description: 'Celebrating the Zimbabwe Defence Forces'
                 },
                 {
-                    title: 'Unity Day',
-                    start: '2024-12-22',
+                    title: 'National Unity Day of Zimbabwe',
+                    start: '2025-12-22',
                     category: 'holidays',
                     color: '#ff4444',
                     description: 'Celebrating national unity'
                 },
                 {
                     title: 'Christmas Day',
-                    start: '2024-12-25',
+                    start: '2025-12-25',
                     category: 'holidays',
                     color: '#ff4444',
                     description: 'Christmas celebration'
                 },
                 {
                     title: 'Boxing Day',
-                    start: '2024-12-26',
+                    start: '2025-12-26',
                     category: 'holidays',
                     color: '#ff4444',
                     description: 'Public holiday following Christmas'
@@ -188,6 +238,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     category: 'deadlines',
                     color: '#4CAF50',
                     description: 'Last day for school registration for the new academic year'
+                },
+                {
+                    title: 'HIT August 2025 Intake Application Deadline',
+                    start: '2025-02-05',
+                    category: 'deadlines',
+                    color: '#4CAF50',
+                    description: 'Last day to apply for the Harare Institute of Technology August 2025 intake.'
+                },
+                {
+                    title: 'UWC Zimbabwe September 2025 Entry Application Deadline',
+                    start: '2025-02-07',
+                    category: 'deadlines',
+                    color: '#4CAF50',
+                    description: 'Deadline for UWC Zimbabwe applications for September 2025 entry.'
+                },
+                {
+                    title: 'WWF Zimbabwe Internship Application Deadline',
+                    start: '2025-08-03',
+                    category: 'deadlines',
+                    color: '#4CAF50',
+                    description: 'Last day to apply for WWF Zimbabwe internships.'
+                },
+                {
+                    title: 'UN Talent Consultancy Application Deadline',
+                    start: '2025-08-05',
+                    category: 'deadlines',
+                    color: '#4CAF50',
+                    description: 'Deadline for UN Talent consultancy applications.'
                 },
 
                 // Government Events
@@ -483,9 +561,29 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.addEventListener('click', function() {
             navList.classList.toggle('active');
         });
+        // Close menu when a nav link is clicked (mobile/tablet UX)
+        navList.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navList.classList.remove('active');
+            });
+        });
     }
 });
 
 
 
 
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.getElementById('navList');
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+        navList.classList.toggle('active');
+    });
+    // Close menu when a nav link is clicked (mobile/tablet UX)
+    navList.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navList.classList.remove('active');
+        });
+    });
+}
