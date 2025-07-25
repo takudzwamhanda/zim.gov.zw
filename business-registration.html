@@ -3,34 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Registration - Zimbabwe Government Portal</title>
+    <title>Business Registration - zim.gov.zw</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="images/logo.jpg" alt="Zimbabwe Government Logo">
-            <h1>Zimbabwe Government Portal</h1>
+            <a href="./index.html">
+                <img src="images/logo.png" alt="Government of Zimbabwe Logo">
+            </a>
+            <span></span>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+        <nav class="navbar">
+            <ul class="nav-list" id="navList">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./ministries.html">Ministries</a></li>
+                <li><a href="./news.html">News</a></li>
+                <li><a href="./calendar.html">Calendar</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
     </header>
 
     <main class="application-page">
-        <div class="application-hero">
+        <div class="application-hero animate__animated animate__fadeIn">
             <h1>Business Registration</h1>
-            <p>Register your business online</p>
+            <p>Register your business with the Companies Registry</p>
+            <div class="service-info">
+                <span class="info-item"><strong>Fee:</strong> $75</span>
+                <span class="info-item"><strong>Processing Time:</strong> 7-10 working days</span>
+            </div>
         </div>
 
         <div class="application-content">
-            <form id="businessForm" onsubmit="return handleBusinessRegistration(event)">
+            <div class="requirements-section">
+                <h2>Required Documents</h2>
+                <ul class="requirements-list">
+                    <li>Business plan</li>
+                    <li>National ID of directors</li>
+                    <li>Proof of address</li>
+                    <li>Memorandum and Articles of Association</li>
+                    <li>Certificate of incorporation (if company)</li>
+                    <li>Tax clearance certificate</li>
+                </ul>
+            </div>
+
+            <form id="businessRegistrationForm" class="application-form">
                 <div class="form-section">
                     <h2>Business Information</h2>
                     <div class="form-grid">
@@ -42,20 +68,74 @@
                             <label for="businessType">Business Type*</label>
                             <select id="businessType" name="businessType" required>
                                 <option value="">Select Business Type</option>
-                                <option value="sole">Sole Proprietorship</option>
+                                <option value="sole-proprietorship">Sole Proprietorship</option>
                                 <option value="partnership">Partnership</option>
-                                <option value="private">Private Limited Company</option>
-                                <option value="public">Public Limited Company</option>
+                                <option value="private-company">Private Company</option>
+                                <option value="public-company">Public Company</option>
+                                <option value="trust">Trust</option>
+                                <option value="cooperative">Cooperative</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="registrationNumber">Proposed Registration Number</label>
-                            <input type="text" id="registrationNumber" name="registrationNumber" readonly>
-                            <small>Will be assigned upon approval</small>
+                            <label for="industry">Industry/Sector*</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select Industry</option>
+                                <option value="agriculture">Agriculture</option>
+                                <option value="mining">Mining</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="construction">Construction</option>
+                                <option value="retail">Retail</option>
+                                <option value="wholesale">Wholesale</option>
+                                <option value="hospitality">Hospitality</option>
+                                <option value="transport">Transport</option>
+                                <option value="finance">Finance</option>
+                                <option value="technology">Technology</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="education">Education</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
                         <div class="form-group">
+                            <label for="registrationDate">Intended Registration Date*</label>
+                            <input type="date" id="registrationDate" name="registrationDate" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="businessDescription">Business Description*</label>
+                            <textarea id="businessDescription" name="businessDescription" rows="3" required placeholder="Describe your business activities"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Business Address</h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
                             <label for="businessAddress">Business Address*</label>
-                            <textarea id="businessAddress" name="businessAddress" required></textarea>
+                            <textarea id="businessAddress" name="businessAddress" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City*</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="province">Province*</label>
+                            <select id="province" name="province" required>
+                                <option value="">Select Province</option>
+                                <option value="harare">Harare</option>
+                                <option value="bulawayo">Bulawayo</option>
+                                <option value="manicaland">Manicaland</option>
+                                <option value="mashonaland-central">Mashonaland Central</option>
+                                <option value="mashonaland-east">Mashonaland East</option>
+                                <option value="mashonaland-west">Mashonaland West</option>
+                                <option value="masvingo">Masvingo</option>
+                                <option value="matabeleland-north">Matabeleland North</option>
+                                <option value="matabeleland-south">Matabeleland South</option>
+                                <option value="midlands">Midlands</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="postalCode">Postal Code</label>
+                            <input type="text" id="postalCode" name="postalCode">
                         </div>
                         <div class="form-group">
                             <label for="businessPhone">Business Phone*</label>
@@ -69,15 +149,19 @@
                 </div>
 
                 <div class="form-section">
-                    <h2>Owner/Partner Information</h2>
+                    <h2>Owner/Director Information</h2>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="ownerName">Full Name*</label>
-                            <input type="text" id="ownerName" name="ownerName" required>
+                            <label for="ownerFirstName">First Name*</label>
+                            <input type="text" id="ownerFirstName" name="ownerFirstName" required>
                         </div>
                         <div class="form-group">
-                            <label for="ownerId">National ID Number*</label>
-                            <input type="text" id="ownerId" name="ownerId" required>
+                            <label for="ownerLastName">Last Name*</label>
+                            <input type="text" id="ownerLastName" name="ownerLastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerIdNumber">National ID Number*</label>
+                            <input type="text" id="ownerIdNumber" name="ownerIdNumber" required>
                         </div>
                         <div class="form-group">
                             <label for="ownerPhone">Phone Number*</label>
@@ -87,49 +171,111 @@
                             <label for="ownerEmail">Email Address*</label>
                             <input type="email" id="ownerEmail" name="ownerEmail" required>
                         </div>
+                        <div class="form-group">
+                            <label for="ownerPosition">Position/Title*</label>
+                            <select id="ownerPosition" name="ownerPosition" required>
+                                <option value="">Select Position</option>
+                                <option value="owner">Owner</option>
+                                <option value="director">Director</option>
+                                <option value="managing-director">Managing Director</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="partner">Partner</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="ownerAddress">Residential Address*</label>
+                            <textarea id="ownerAddress" name="ownerAddress" rows="2" required></textarea>
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-section">
-                    <h2>Business Details</h2>
+                    <h2>Financial Information</h2>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="businessCategory">Business Category*</label>
-                            <select id="businessCategory" name="businessCategory" required>
-                                <option value="">Select Category</option>
-                                <option value="retail">Retail</option>
-                                <option value="wholesale">Wholesale</option>
-                                <option value="manufacturing">Manufacturing</option>
-                                <option value="services">Services</option>
+                            <label for="shareCapital">Share Capital (USD)*</label>
+                            <input type="number" id="shareCapital" name="shareCapital" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numberOfShares">Number of Shares*</label>
+                            <input type="number" id="numberOfShares" name="numberOfShares" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectedTurnover">Projected Annual Turnover (USD)</label>
+                            <input type="number" id="projectedTurnover" name="projectedTurnover" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="numberOfEmployees">Expected Number of Employees</label>
+                            <input type="number" id="numberOfEmployees" name="numberOfEmployees" min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Banking Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="bankName">Bank Name*</label>
+                            <select id="bankName" name="bankName" required>
+                                <option value="">Select Bank</option>
+                                <option value="cabs">CABS</option>
+                                <option value="cbz">CBZ Bank</option>
+                                <option value="ecobank">Ecobank</option>
+                                <option value="fbc">FBC Bank</option>
+                                <option value="nedbank">Nedbank</option>
+                                <option value="stanbic">Stanbic Bank</option>
+                                <option value="steward">Steward Bank</option>
+                                <option value="zvb">ZB Bank</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="businessDescription">Business Description*</label>
-                            <textarea id="businessDescription" name="businessDescription" required></textarea>
+                            <label for="accountNumber">Account Number*</label>
+                            <input type="text" id="accountNumber" name="accountNumber" required>
                         </div>
                         <div class="form-group">
-                            <label for="startDate">Intended Start Date*</label>
-                            <input type="date" id="startDate" name="startDate" required>
+                            <label for="accountType">Account Type*</label>
+                            <select id="accountType" name="accountType" required>
+                                <option value="">Select Account Type</option>
+                                <option value="current">Current Account</option>
+                                <option value="savings">Savings Account</option>
+                                <option value="business">Business Account</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="branchCode">Branch Code</label>
+                            <input type="text" id="branchCode" name="branchCode">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-section">
-                    <h2>Document Upload</h2>
+                    <h2>Additional Information</h2>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="businessPlan">Business Plan*</label>
-                            <input type="file" id="businessPlan" name="businessPlan" accept=".pdf" required>
+                            <label for="vatRegistration">VAT Registration Required</label>
+                            <select id="vatRegistration" name="vatRegistration">
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="ownerIdDocument">Owner's ID Document*</label>
-                            <input type="file" id="ownerIdDocument" name="ownerIdDocument" accept=".pdf,.jpg,.jpeg,.png" required>
+                            <label for="paye">PAYE Registration Required</label>
+                            <select id="paye" name="paye">
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="proofOfAddress">Proof of Business Address*</label>
-                            <input type="file" id="proofOfAddress" name="proofOfAddress" accept=".pdf,.jpg,.jpeg,.png" required>
-                            <small>Utility bill or lease agreement not older than 3 months</small>
+                            <label for="licenseRequired">Special License Required</label>
+                            <select id="licenseRequired" name="licenseRequired">
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="licenseType">License Type</label>
+                            <input type="text" id="licenseType" name="licenseType" placeholder="If special license required">
                         </div>
                     </div>
                 </div>
@@ -138,20 +284,67 @@
                     <h2>Declaration</h2>
                     <div class="form-group">
                         <label class="checkbox-label">
-                            <input type="checkbox" required>
-                            I declare that all the information provided is true and correct to the best of my knowledge.
+                            <input type="checkbox" id="declaration" name="declaration" required>
+                            <span class="checkmark"></span>
+                            I declare that the information provided is true and accurate. I understand that providing false information may result in rejection of the application.*
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
+                            <span class="checkmark"></span>
+                            I agree to comply with all applicable laws and regulations governing business operations in Zimbabwe.*
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="dataConsent" name="dataConsent" required>
+                            <span class="checkmark"></span>
+                            I consent to the processing of my personal and business data for registration purposes.*
                         </label>
                     </div>
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="gov-button">Submit Registration</button>
-                    <button type="button" class="gov-button secondary" onclick="window.location.href='services.html'">Cancel</button>
+                    <button type="submit" class="gov-button primary">Submit Application</button>
+                    <button type="reset" class="gov-button secondary">Clear Form</button>
+                    <a href="services.html" class="gov-button outline">Back to Services</a>
                 </div>
             </form>
         </div>
     </main>
-    
+
+    <footer class="footer-compact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Government of Zimbabwe Logo">
+                <span class="site-name">Government of Zimbabwe</span>
+            </div>
+            <div class="footer-links">
+                <strong>Quick Links</strong>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <strong>Contact</strong>
+                <span>Email: info@mhandatakudzwa07@gmail.com</span>
+                <span>Phone: +263 771 830 494</span>
+                <span>Harare, Zimbabwe</span>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook" title="Facebook"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+                <a href="#" aria-label="Twitter" title="Twitter"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.38 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.117 2.823 5.254a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.058 0 14.009-7.496 14.009-13.986 0-.21 0-.423-.016-.634A9.936 9.936 0 0 0 24 4.557z"/></svg></a>
+                <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.37-1.849 3.602 0 4.267 2.369 4.267 5.455v6.285zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.271V1.723C24 .771 23.2 0 22.225 0z"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Takudzwa Mhanda. All rights reserved.
+        </div>
+    </footer>
+
     <script src="script.js" defer></script>
 </body>
-</html> 
+</html>

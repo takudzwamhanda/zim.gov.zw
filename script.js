@@ -1,3 +1,62 @@
+// Service Functions - Global scope for HTML onclick access
+function startService(serviceType) {
+    // Redirect to appropriate service page
+    switch(serviceType) {
+        case 'passport':
+            window.location.href = 'passport-application.html';
+            break;
+        case 'national-id':
+            window.location.href = 'national-id-application.html';
+            break;
+        case 'birth-certificate':
+            window.location.href = 'birth-certificate-application.html';
+            break;
+        case 'vehicle-registration':
+            window.location.href = 'vehicle-registration-application.html';
+            break;
+        case 'drivers-license':
+            window.location.href = 'drivers-license-application.html';
+            break;
+        case 'marriage-registration':
+        case 'marriage':
+            window.location.href = 'marriage-registration-application.html';
+            break;
+        case 'death-certificate':
+            alert('Death Certificate Application\n\nPlease visit your nearest Registrar General office with:\n\n• Medical certificate of death\n• National ID of deceased\n• Applicant\'s National ID\n• Proof of relationship\n\nFee: $15\nProcessing time: 3-5 working days');
+            break;
+        case 'property':
+            alert('Property Registration\n\nPlease visit the Deeds Registry with:\n\n• Title deeds\n• Survey plans\n• National ID\n• Proof of payment\n\nFee: $100\nProcessing time: 14-21 working days');
+            break;
+        case 'land':
+            alert('Land Application\n\nPlease visit the Ministry of Lands with:\n\n• National ID\n• Proof of residence\n• Application form\n• Bank statements\n\nFee: $50\nProcessing time: 30-60 working days');
+            break;
+        case 'pension':
+            alert('Pension Services\n\nPlease visit NSSA offices with:\n\n• National ID\n• Employment history\n• Bank details\n• Medical certificate (if applicable)\n\nFee: Free\nProcessing time: 14-21 working days');
+            break;
+        case 'welfare':
+            alert('Social Welfare Application\n\nPlease visit the Department of Social Welfare with:\n\n• National ID\n• Proof of income\n• Family details\n• Medical certificates (if applicable)\n\nFee: Free\nProcessing time: 14-21 working days');
+            break;
+        case 'school-registration':
+        case 'school':
+            window.location.href = 'school-registration-application.html';
+            break;
+        case 'exam-results':
+            alert('Exam Results\n\nAccess your examination results online at:\n\n• ZIMSEC website: www.zimsec.co.zw\n• Use your exam number and National ID\n• Results available immediately after release\n\nFee: $5 for certificate copies\nProcessing time: Immediate');
+            break;
+        case 'business':
+            window.location.href = 'business-registration.html';
+            break;
+        case 'tax':
+            window.location.href = 'tax-registration.html';
+            break;
+        case 'university-application':
+            window.location.href = 'university-application-form.html';
+            break;
+        default:
+            alert('Service Information\n\nThis service is currently being updated. Please visit the relevant government office or contact our support team for assistance.');
+    }
+}
+
 // Hamburger Menu Functionality (Robust)
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
@@ -442,37 +501,12 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'index.html';
     }
 
-    // Service Functions
-    function startService(serviceType) {
-        if (!checkUserLogin()) {
-            alert('Please log in to access this service');
-            window.location.href = 'login.html';
-            return;
-        }
 
-        // Redirect to appropriate service page
-        switch(serviceType) {
-            case 'passport':
-                window.location.href = 'passport-application.html';
-                break;
-            case 'national-id':
-                window.location.href = 'national-id-application.html';
-                break;
-            case 'business':
-                window.location.href = 'business-registration.html';
-                break;
-            case 'tax':
-                window.location.href = 'tax-registration.html';
-                break;
-            default:
-                alert('Service not available');
-        }
-    }
 
     // Contact Form Handler
     function handleContactSubmit(event) {
         event.preventDefault();
-        
+        // ...
         const formData = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National ID Application - zim.gov.zw</title>
+    <title>Driver's License Application - zim.gov.zw</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
@@ -35,10 +35,10 @@
 
     <main class="application-page">
         <div class="application-hero animate__animated animate__fadeIn">
-            <h1>National ID Registration</h1>
-            <p>Apply for or replace your National ID card</p>
+            <h1>Driver's License Application</h1>
+            <p>Apply for your driver's license</p>
             <div class="service-info">
-                <span class="info-item"><strong>Fee:</strong> $20</span>
+                <span class="info-item"><strong>Fee:</strong> $30</span>
                 <span class="info-item"><strong>Processing Time:</strong> 5-7 working days</span>
             </div>
         </div>
@@ -47,16 +47,15 @@
             <div class="requirements-section">
                 <h2>Required Documents</h2>
                 <ul class="requirements-list">
-                    <li>Birth certificate</li>
+                    <li>National ID copy</li>
+                    <li>Medical certificate</li>
                     <li>Proof of residence</li>
                     <li>Passport-size photos (2)</li>
-                    <li>Previous ID (if replacement)</li>
-                    <li>Affidavit (if lost/stolen)</li>
-                    <li>Parent's ID (for minors)</li>
+                    <li>Learner's license (if applicable)</li>
                 </ul>
             </div>
 
-            <form id="nationalIdApplicationForm" class="application-form">
+            <form id="driversLicenseForm" class="application-form">
                 <div class="form-section">
                     <h2>Personal Information</h2>
                     <div class="form-grid">
@@ -69,16 +68,12 @@
                             <input type="text" id="lastName" name="lastName" required>
                         </div>
                         <div class="form-group">
-                            <label for="middleName">Middle Name</label>
-                            <input type="text" id="middleName" name="middleName">
-                        </div>
-                        <div class="form-group">
                             <label for="dateOfBirth">Date of Birth*</label>
                             <input type="date" id="dateOfBirth" name="dateOfBirth" required>
                         </div>
                         <div class="form-group">
-                            <label for="placeOfBirth">Place of Birth*</label>
-                            <input type="text" id="placeOfBirth" name="placeOfBirth" required>
+                            <label for="idNumber">National ID Number*</label>
+                            <input type="text" id="idNumber" name="idNumber" required>
                         </div>
                         <div class="form-group">
                             <label for="gender">Gender*</label>
@@ -91,16 +86,6 @@
                         <div class="form-group">
                             <label for="nationality">Nationality*</label>
                             <input type="text" id="nationality" name="nationality" value="Zimbabwean" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="maritalStatus">Marital Status*</label>
-                            <select id="maritalStatus" name="maritalStatus" required>
-                                <option value="">Select Status</option>
-                                <option value="single">Single</option>
-                                <option value="married">Married</option>
-                                <option value="divorced">Divorced</option>
-                                <option value="widowed">Widowed</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -120,120 +105,84 @@
                             <label for="address">Residential Address*</label>
                             <textarea id="address" name="address" rows="3" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="city">City*</label>
-                            <input type="text" id="city" name="city" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="province">Province*</label>
-                            <select id="province" name="province" required>
-                                <option value="">Select Province</option>
-                                <option value="harare">Harare</option>
-                                <option value="bulawayo">Bulawayo</option>
-                                <option value="manicaland">Manicaland</option>
-                                <option value="mashonaland-central">Mashonaland Central</option>
-                                <option value="mashonaland-east">Mashonaland East</option>
-                                <option value="mashonaland-west">Mashonaland West</option>
-                                <option value="masvingo">Masvingo</option>
-                                <option value="matabeleland-north">Matabeleland North</option>
-                                <option value="matabeleland-south">Matabeleland South</option>
-                                <option value="midlands">Midlands</option>
-                            </select>
-                        </div>
                     </div>
                 </div>
 
                 <div class="form-section">
-                    <h2>Application Details</h2>
+                    <h2>License Information</h2>
                     <div class="form-grid">
+                        <div class="form-group">
+                            <label for="licenseType">License Type*</label>
+                            <select id="licenseType" name="licenseType" required>
+                                <option value="">Select License Type</option>
+                                <option value="class1">Class 1 - Motorcycles</option>
+                                <option value="class2">Class 2 - Light Motor Vehicles</option>
+                                <option value="class3">Class 3 - Heavy Motor Vehicles</option>
+                                <option value="class4">Class 4 - Public Service Vehicles</option>
+                                <option value="class5">Class 5 - Articulated Vehicles</option>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="applicationType">Application Type*</label>
                             <select id="applicationType" name="applicationType" required>
-                                <option value="">Select Type</option>
-                                <option value="new">New Application</option>
-                                <option value="replacement">Replacement</option>
-                                <option value="renewal">Renewal</option>
+                                <option value="">Select Application Type</option>
+                                <option value="new">New License</option>
+                                <option value="renewal">License Renewal</option>
+                                <option value="replacement">Replacement License</option>
+                                <option value="upgrade">License Upgrade</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="previousIdNumber">Previous ID Number</label>
-                            <input type="text" id="previousIdNumber" name="previousIdNumber" placeholder="If replacement or renewal">
+                        <div class="form-group" id="learnerLicenseGroup" style="display: none;">
+                            <label for="learnerLicenseNumber">Learner's License Number</label>
+                            <input type="text" id="learnerLicenseNumber" name="learnerLicenseNumber">
                         </div>
-                        <div class="form-group">
-                            <label for="reasonForApplication">Reason for Application*</label>
-                            <select id="reasonForApplication" name="reasonForApplication" required>
-                                <option value="">Select Reason</option>
-                                <option value="first-time">First Time Application</option>
-                                <option value="lost">Lost ID</option>
-                                <option value="stolen">Stolen ID</option>
-                                <option value="damaged">Damaged ID</option>
-                                <option value="name-change">Name Change</option>
-                                <option value="expired">Expired ID</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="urgentProcessing">Urgent Processing</label>
-                            <select id="urgentProcessing" name="urgentProcessing">
-                                <option value="no">No (Standard - 7 days)</option>
-                                <option value="yes">Yes (Express - 3 days, +$10)</option>
-                            </select>
+                        <div class="form-group" id="currentLicenseGroup" style="display: none;">
+                            <label for="currentLicenseNumber">Current License Number</label>
+                            <input type="text" id="currentLicenseNumber" name="currentLicenseNumber">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-section">
-                    <h2>Parent/Guardian Information (For Minors)</h2>
+                    <h2>Medical Information</h2>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="parentName">Parent/Guardian Name</label>
-                            <input type="text" id="parentName" name="parentName">
+                            <label for="medicalCertificateDate">Medical Certificate Date*</label>
+                            <input type="date" id="medicalCertificateDate" name="medicalCertificateDate" required>
                         </div>
                         <div class="form-group">
-                            <label for="parentId">Parent/Guardian ID Number</label>
-                            <input type="text" id="parentId" name="parentId">
+                            <label for="doctorName">Doctor's Name*</label>
+                            <input type="text" id="doctorName" name="doctorName" required>
                         </div>
                         <div class="form-group">
-                            <label for="parentPhone">Parent/Guardian Phone</label>
-                            <input type="tel" id="parentPhone" name="parentPhone">
-                        </div>
-                        <div class="form-group">
-                            <label for="relationship">Relationship</label>
-                            <select id="relationship" name="relationship">
-                                <option value="">Select Relationship</option>
-                                <option value="father">Father</option>
-                                <option value="mother">Mother</option>
-                                <option value="guardian">Legal Guardian</option>
+                            <label for="medicalFitness">Medical Fitness*</label>
+                            <select id="medicalFitness" name="medicalFitness" required>
+                                <option value="">Select</option>
+                                <option value="fit">Fit to Drive</option>
+                                <option value="conditional">Fit with Conditions</option>
                             </select>
+                        </div>
+                        <div class="form-group" id="conditionsGroup" style="display: none;">
+                            <label for="medicalConditions">Medical Conditions/Restrictions</label>
+                            <textarea id="medicalConditions" name="medicalConditions" rows="2" placeholder="Specify any medical conditions or driving restrictions"></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-section">
-                    <h2>Additional Information</h2>
+                    <h2>Emergency Contact</h2>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="occupation">Occupation</label>
-                            <input type="text" id="occupation" name="occupation">
+                            <label for="emergencyName">Emergency Contact Name*</label>
+                            <input type="text" id="emergencyName" name="emergencyName" required>
                         </div>
                         <div class="form-group">
-                            <label for="employer">Employer</label>
-                            <input type="text" id="employer" name="employer">
+                            <label for="emergencyRelation">Relationship*</label>
+                            <input type="text" id="emergencyRelation" name="emergencyRelation" required>
                         </div>
                         <div class="form-group">
-                            <label for="height">Height (cm)</label>
-                            <input type="number" id="height" name="height" min="100" max="250">
-                        </div>
-                        <div class="form-group">
-                            <label for="eyeColor">Eye Color</label>
-                            <select id="eyeColor" name="eyeColor">
-                                <option value="">Select Eye Color</option>
-                                <option value="brown">Brown</option>
-                                <option value="black">Black</option>
-                                <option value="blue">Blue</option>
-                                <option value="green">Green</option>
-                                <option value="hazel">Hazel</option>
-                                <option value="grey">Grey</option>
-                            </select>
+                            <label for="emergencyPhone">Emergency Contact Phone*</label>
+                            <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
                         </div>
                     </div>
                 </div>
@@ -244,21 +193,14 @@
                         <label class="checkbox-label">
                             <input type="checkbox" id="declaration" name="declaration" required>
                             <span class="checkmark"></span>
-                            I declare that the information provided is true and accurate. I understand that providing false information is a criminal offense.*
+                            I declare that the information provided is true and accurate. I understand that providing false information is an offense and may result in the rejection of my application or cancellation of my license.*
                         </label>
                     </div>
                     <div class="form-group">
                         <label class="checkbox-label">
                             <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
                             <span class="checkmark"></span>
-                            I agree to the terms and conditions of National ID issuance.*
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="dataConsent" name="dataConsent" required>
-                            <span class="checkmark"></span>
-                            I consent to the processing of my personal data for identification purposes.*
+                            I agree to abide by all traffic laws and regulations of Zimbabwe.*
                         </label>
                     </div>
                 </div>
@@ -304,5 +246,33 @@
     </footer>
 
     <script src="script.js" defer></script>
+    <script>
+        // Show/hide fields based on application type
+        document.getElementById('applicationType').addEventListener('change', function() {
+            const learnerGroup = document.getElementById('learnerLicenseGroup');
+            const currentGroup = document.getElementById('currentLicenseGroup');
+            
+            if (this.value === 'new') {
+                learnerGroup.style.display = 'block';
+                currentGroup.style.display = 'none';
+            } else if (this.value === 'renewal' || this.value === 'replacement' || this.value === 'upgrade') {
+                learnerGroup.style.display = 'none';
+                currentGroup.style.display = 'block';
+            } else {
+                learnerGroup.style.display = 'none';
+                currentGroup.style.display = 'none';
+            }
+        });
+
+        // Show/hide medical conditions field
+        document.getElementById('medicalFitness').addEventListener('change', function() {
+            const conditionsGroup = document.getElementById('conditionsGroup');
+            if (this.value === 'conditional') {
+                conditionsGroup.style.display = 'block';
+            } else {
+                conditionsGroup.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

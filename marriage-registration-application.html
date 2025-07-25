@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Registration - zim.gov.zw</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="images/logo.png" alt="Government of Zimbabwe Logo">
+            </a>
+            <span></span>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list" id="navList">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./ministries.html">Ministries</a></li>
+                <li><a href="./news.html">News</a></li>
+                <li><a href="./calendar.html">Calendar</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="application-page">
+        <div class="application-hero animate__animated animate__fadeIn">
+            <h1>Marriage Registration</h1>
+            <p>Register your marriage with the Registrar General</p>
+            <div class="service-info">
+                <span class="info-item"><strong>Fee:</strong> $25</span>
+                <span class="info-item"><strong>Processing Time:</strong> Same day</span>
+            </div>
+        </div>
+
+        <div class="application-content">
+            <div class="requirements-section">
+                <h2>Required Documents</h2>
+                <ul class="requirements-list">
+                    <li>Both parties' National IDs</li>
+                    <li>Birth certificates</li>
+                    <li>Divorce decree (if applicable)</li>
+                    <li>Two witnesses with IDs</li>
+                    <li>Affidavit of single status</li>
+                </ul>
+            </div>
+
+            <form id="marriageRegistrationForm" class="application-form">
+                <div class="form-section">
+                    <h2>Groom's Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="groomFirstName">First Name*</label>
+                            <input type="text" id="groomFirstName" name="groomFirstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="groomLastName">Last Name*</label>
+                            <input type="text" id="groomLastName" name="groomLastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="groomDateOfBirth">Date of Birth*</label>
+                            <input type="date" id="groomDateOfBirth" name="groomDateOfBirth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="groomIdNumber">National ID Number*</label>
+                            <input type="text" id="groomIdNumber" name="groomIdNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="groomOccupation">Occupation*</label>
+                            <input type="text" id="groomOccupation" name="groomOccupation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="groomNationality">Nationality*</label>
+                            <input type="text" id="groomNationality" name="groomNationality" value="Zimbabwean" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="groomMaritalStatus">Previous Marital Status*</label>
+                            <select id="groomMaritalStatus" name="groomMaritalStatus" required>
+                                <option value="">Select Status</option>
+                                <option value="single">Single</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="widowed">Widowed</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="groomAddress">Residential Address*</label>
+                            <textarea id="groomAddress" name="groomAddress" rows="2" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Bride's Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="brideFirstName">First Name*</label>
+                            <input type="text" id="brideFirstName" name="brideFirstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brideLastName">Last Name*</label>
+                            <input type="text" id="brideLastName" name="brideLastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brideDateOfBirth">Date of Birth*</label>
+                            <input type="date" id="brideDateOfBirth" name="brideDateOfBirth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brideIdNumber">National ID Number*</label>
+                            <input type="text" id="brideIdNumber" name="brideIdNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brideOccupation">Occupation*</label>
+                            <input type="text" id="brideOccupation" name="brideOccupation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brideNationality">Nationality*</label>
+                            <input type="text" id="brideNationality" name="brideNationality" value="Zimbabwean" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brideMaritalStatus">Previous Marital Status*</label>
+                            <select id="brideMaritalStatus" name="brideMaritalStatus" required>
+                                <option value="">Select Status</option>
+                                <option value="single">Single</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="widowed">Widowed</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="brideAddress">Residential Address*</label>
+                            <textarea id="brideAddress" name="brideAddress" rows="2" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Marriage Details</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="marriageDate">Proposed Marriage Date*</label>
+                            <input type="date" id="marriageDate" name="marriageDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="marriageType">Marriage Type*</label>
+                            <select id="marriageType" name="marriageType" required>
+                                <option value="">Select Marriage Type</option>
+                                <option value="civil">Civil Marriage</option>
+                                <option value="customary">Customary Marriage</option>
+                                <option value="religious">Religious Marriage</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="marriageVenue">Marriage Venue*</label>
+                            <input type="text" id="marriageVenue" name="marriageVenue" placeholder="Full address of marriage venue" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="officiant">Marriage Officiant*</label>
+                            <input type="text" id="officiant" name="officiant" placeholder="Name of person conducting ceremony" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="officiantTitle">Officiant Title*</label>
+                            <select id="officiantTitle" name="officiantTitle" required>
+                                <option value="">Select Title</option>
+                                <option value="magistrate">Magistrate</option>
+                                <option value="pastor">Pastor</option>
+                                <option value="priest">Priest</option>
+                                <option value="imam">Imam</option>
+                                <option value="traditional-leader">Traditional Leader</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Witness Information</h2>
+                    <div class="witness-section">
+                        <h3>Witness 1</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="witness1Name">Full Name*</label>
+                                <input type="text" id="witness1Name" name="witness1Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="witness1Id">ID Number*</label>
+                                <input type="text" id="witness1Id" name="witness1Id" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="witness1Phone">Phone Number*</label>
+                                <input type="tel" id="witness1Phone" name="witness1Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="witness1Relation">Relationship to Couple</label>
+                                <input type="text" id="witness1Relation" name="witness1Relation" placeholder="e.g., Friend, Family">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="witness-section">
+                        <h3>Witness 2</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="witness2Name">Full Name*</label>
+                                <input type="text" id="witness2Name" name="witness2Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="witness2Id">ID Number*</label>
+                                <input type="text" id="witness2Id" name="witness2Id" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="witness2Phone">Phone Number*</label>
+                                <input type="tel" id="witness2Phone" name="witness2Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="witness2Relation">Relationship to Couple</label>
+                                <input type="text" id="witness2Relation" name="witness2Relation" placeholder="e.g., Friend, Family">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Contact Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="contactPhone">Primary Contact Phone*</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" name="contactEmail">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Declaration</h2>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="declaration" name="declaration" required>
+                            <span class="checkmark"></span>
+                            We declare that the information provided is true and accurate. We understand that providing false information is an offense.*
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <span class="checkmark"></span>
+                            We both consent to this marriage freely and voluntarily.*
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="legalAge" name="legalAge" required>
+                            <span class="checkmark"></span>
+                            We confirm that both parties are of legal age to marry (18 years or older).*
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="gov-button primary">Submit Registration</button>
+                    <button type="reset" class="gov-button secondary">Clear Form</button>
+                    <a href="services.html" class="gov-button outline">Back to Services</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer-compact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Government of Zimbabwe Logo">
+                <span class="site-name">Government of Zimbabwe</span>
+            </div>
+            <div class="footer-links">
+                <strong>Quick Links</strong>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <strong>Contact</strong>
+                <span>Email: info@mhandatakudzwa07@gmail.com</span>
+                <span>Phone: +263 771 830 494</span>
+                <span>Harare, Zimbabwe</span>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook" title="Facebook"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+                <a href="#" aria-label="Twitter" title="Twitter"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.38 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.117 2.823 5.254a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.058 0 14.009-7.496 14.009-13.986 0-.21 0-.423-.016-.634A9.936 9.936 0 0 0 24 4.557z"/></svg></a>
+                <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.37-1.849 3.602 0 4.267 2.369 4.267 5.455v6.285zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.271V1.723C24 .771 23.2 0 22.225 0z"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Takudzwa Mhanda. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

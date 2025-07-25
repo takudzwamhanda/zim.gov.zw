@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Registration - zim.gov.zw</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="images/logo.png" alt="Government of Zimbabwe Logo">
+            </a>
+            <span></span>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list" id="navList">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./ministries.html">Ministries</a></li>
+                <li><a href="./news.html">News</a></li>
+                <li><a href="./calendar.html">Calendar</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="application-page">
+        <div class="application-hero animate__animated animate__fadeIn">
+            <h1>Vehicle Registration</h1>
+            <p>Register your new or imported vehicle</p>
+            <div class="service-info">
+                <span class="info-item"><strong>Fee:</strong> $50</span>
+                <span class="info-item"><strong>Processing Time:</strong> 2-3 working days</span>
+            </div>
+        </div>
+
+        <div class="application-content">
+            <div class="requirements-section">
+                <h2>Required Documents</h2>
+                <ul class="requirements-list">
+                    <li>National ID copy</li>
+                    <li>Proof of ownership (invoice/receipt)</li>
+                    <li>Import documents (if applicable)</li>
+                    <li>Insurance certificate</li>
+                    <li>Vehicle inspection certificate</li>
+                </ul>
+            </div>
+
+            <form id="vehicleRegistrationForm" class="application-form">
+                <div class="form-section">
+                    <h2>Vehicle Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="vehicleMake">Make*</label>
+                            <input type="text" id="vehicleMake" name="vehicleMake" placeholder="e.g., Toyota, Honda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleModel">Model*</label>
+                            <input type="text" id="vehicleModel" name="vehicleModel" placeholder="e.g., Corolla, Civic" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleYear">Year of Manufacture*</label>
+                            <input type="number" id="vehicleYear" name="vehicleYear" min="1900" max="2025" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleColor">Color*</label>
+                            <input type="text" id="vehicleColor" name="vehicleColor" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="engineNumber">Engine Number*</label>
+                            <input type="text" id="engineNumber" name="engineNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="chassisNumber">Chassis Number*</label>
+                            <input type="text" id="chassisNumber" name="chassisNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleType">Vehicle Type*</label>
+                            <select id="vehicleType" name="vehicleType" required>
+                                <option value="">Select Vehicle Type</option>
+                                <option value="passenger">Passenger Car</option>
+                                <option value="commercial">Commercial Vehicle</option>
+                                <option value="motorcycle">Motorcycle</option>
+                                <option value="truck">Truck</option>
+                                <option value="bus">Bus</option>
+                                <option value="trailer">Trailer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fuelType">Fuel Type*</label>
+                            <select id="fuelType" name="fuelType" required>
+                                <option value="">Select Fuel Type</option>
+                                <option value="petrol">Petrol</option>
+                                <option value="diesel">Diesel</option>
+                                <option value="electric">Electric</option>
+                                <option value="hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Owner Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="ownerFirstName">First Name*</label>
+                            <input type="text" id="ownerFirstName" name="ownerFirstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerLastName">Last Name*</label>
+                            <input type="text" id="ownerLastName" name="ownerLastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerIdNumber">National ID Number*</label>
+                            <input type="text" id="ownerIdNumber" name="ownerIdNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerPhone">Phone Number*</label>
+                            <input type="tel" id="ownerPhone" name="ownerPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerEmail">Email Address</label>
+                            <input type="email" id="ownerEmail" name="ownerEmail">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="ownerAddress">Residential Address*</label>
+                            <textarea id="ownerAddress" name="ownerAddress" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Purchase Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="purchaseDate">Date of Purchase*</label>
+                            <input type="date" id="purchaseDate" name="purchaseDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="purchasePrice">Purchase Price (USD)*</label>
+                            <input type="number" id="purchasePrice" name="purchasePrice" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dealerName">Dealer/Seller Name</label>
+                            <input type="text" id="dealerName" name="dealerName">
+                        </div>
+                        <div class="form-group">
+                            <label for="isImported">Is this an imported vehicle?*</label>
+                            <select id="isImported" name="isImported" required>
+                                <option value="">Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section" id="importSection" style="display: none;">
+                    <h2>Import Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="countryOfOrigin">Country of Origin</label>
+                            <input type="text" id="countryOfOrigin" name="countryOfOrigin">
+                        </div>
+                        <div class="form-group">
+                            <label for="importDate">Date of Import</label>
+                            <input type="date" id="importDate" name="importDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="customsReference">Customs Reference Number</label>
+                            <input type="text" id="customsReference" name="customsReference">
+                        </div>
+                        <div class="form-group">
+                            <label for="dutyPaid">Duty Paid (USD)</label>
+                            <input type="number" id="dutyPaid" name="dutyPaid" step="0.01">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Insurance Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="insuranceCompany">Insurance Company*</label>
+                            <input type="text" id="insuranceCompany" name="insuranceCompany" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="policyNumber">Policy Number*</label>
+                            <input type="text" id="policyNumber" name="policyNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="insuranceExpiry">Insurance Expiry Date*</label>
+                            <input type="date" id="insuranceExpiry" name="insuranceExpiry" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="gov-button primary">Submit Registration</button>
+                    <button type="reset" class="gov-button secondary">Clear Form</button>
+                    <a href="services.html" class="gov-button outline">Back to Services</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer-compact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Government of Zimbabwe Logo">
+                <span class="site-name">Government of Zimbabwe</span>
+            </div>
+            <div class="footer-links">
+                <strong>Quick Links</strong>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <strong>Contact</strong>
+                <span>Email: info@mhandatakudzwa07@gmail.com</span>
+                <span>Phone: +263 771 830 494</span>
+                <span>Harare, Zimbabwe</span>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook" title="Facebook"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+                <a href="#" aria-label="Twitter" title="Twitter"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.38 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.117 2.823 5.254a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.058 0 14.009-7.496 14.009-13.986 0-.21 0-.423-.016-.634A9.936 9.936 0 0 0 24 4.557z"/></svg></a>
+                <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.37-1.849 3.602 0 4.267 2.369 4.267 5.455v6.285zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.271V1.723C24 .771 23.2 0 22.225 0z"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Takudzwa Mhanda. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script>
+        // Show/hide import section based on selection
+        document.getElementById('isImported').addEventListener('change', function() {
+            const importSection = document.getElementById('importSection');
+            if (this.value === 'yes') {
+                importSection.style.display = 'block';
+            } else {
+                importSection.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
